@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cardboard Creations by Tatum &amp; Kash — Life-Size Cardboard Blueprints for Kids</title>
+<meta name="description" content="Printable life-size cardboard build blueprints for kids by Tatum & Kash — castles, rockets, pirate ships, robot suits & more. Instant PDF download in 4 languages, works with any cardboard box, ships worldwide.">
+<meta name="keywords" content="cardboard blueprint, cardboard castle, kids craft, printable, DIY cardboard, cardboard playhouse, cardboard costume, cardboard fort, Tatum and Kash, STEM kids activity, multilingual blueprint">
+<meta name="author" content="High End Entertainment LLC">
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cardboard Creations by Tatum & Kash — Life-Size Cardboard Blueprints">
+<meta property="og:description" content="Turn any cardboard box into a castle, rocket, pirate ship or robot suit. Instant download. Worldwide. Any language.">
+<meta property="og:image" content="images/robot-suit.jpg">
+<meta property="og:site_name" content="Cardboard Creations by Tatum & Kash">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" href="images/hee-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#FFD700; --blue:#1565C0; --yellow:#FFC107; --green:#43A047;
+    --navy:#1A237E; --white:#FFFFFF; --ink:#12143a; --cloud:#f4f6ff;
+    --card:#ffffff; --shadow:0 12px 30px rgba(26,35,126,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Nunito',system-ui,sans-serif;color:var(--ink);background:var(--cloud);line-height:1.55;top:0 !important}
+  h1,h2,h3,.head{font-family:'Fredoka',sans-serif;text-transform:uppercase;letter-spacing:.5px}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+
+  /* Google Translate widget cleanup */
+  .goog-te-banner-frame,.skiptranslate{display:none !important}
+  #goog-gt-tt,.goog-te-balloon-frame{display:none !important}
+  .goog-text-highlight{background:none !important;box-shadow:none !important}
+  #google_translate_element select{
+    font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:var(--navy);
+    background:#fff;border:none;border-radius:30px;padding:6px 12px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+  #google_translate_element .goog-logo-link,#google_translate_element span{display:none !important}
+
+  /* ── TOP BAR ── */
+  .topbar{background:var(--navy);color:#fff;font-weight:800;font-size:13px}
+  .topbar .wrap{display:flex;align-items:center;justify-content:center;gap:24px;padding:8px 22px;flex-wrap:wrap;text-align:center}
+  .topbar span.tb{display:inline-flex;align-items:center;gap:6px;opacity:.95}
+
+  /* ── NAV ── */
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);box-shadow:0 2px 14px rgba(26,35,126,.08)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 22px;gap:14px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{height:44px;width:auto}
+  .brand b{font-family:'Fredoka';font-size:19px;color:var(--navy);text-transform:uppercase;line-height:1}
+  .brand small{display:block;font-size:10px;letter-spacing:2px;color:var(--blue);font-weight:900}
+  .nav-right{display:flex;align-items:center;gap:12px}
+  .nav-cta{background:var(--green);color:#fff;padding:11px 20px;border-radius:40px;font-weight:900;font-size:14px;box-shadow:0 6px 16px rgba(67,160,71,.35);transition:transform .15s;white-space:nowrap}
+  .nav-cta:hover{transform:translateY(-2px)}
+
+  /* ── HERO ── */
+  .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--blue) 0%,var(--navy) 100%);color:#fff;padding:60px 0 70px}
+  .hero:before{content:"";position:absolute;inset:0;background:
+     radial-gradient(circle at 15% 20%,rgba(255,215,0,.18),transparent 40%),
+     radial-gradient(circle at 85% 80%,rgba(255,193,7,.16),transparent 42%)}
+  .hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+  .hero-seal{position:absolute;bottom:22px;left:22px;height:78px;z-index:6;opacity:.97;filter:drop-shadow(0 4px 10px rgba(0,0,0,.3))}
+  .hero h1{font-size:clamp(30px,4.4vw,52px);line-height:1.02;text-shadow:0 3px 14px rgba(0,0,0,.25)}
+  .hero h1 em{color:var(--gold);font-style:normal}
+  .hero p.sub{font-size:19px;font-weight:700;margin:18px 0 8px;max-width:520px}
+  .hero .tag{display:inline-block;font-family:'Fredoka';font-size:15px;letter-spacing:3px;color:var(--gold);margin-bottom:14px}
+  .hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:26px}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:'Fredoka';font-weight:700;font-size:16px;padding:15px 26px;border-radius:44px;cursor:pointer;border:none;transition:transform .15s,box-shadow .15s}
+  .btn-gold{background:var(--gold);color:var(--navy);box-shadow:0 8px 22px rgba(255,215,0,.4)}
+  .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:2px solid rgba(255,255,255,.55)}
+  .btn:hover{transform:translateY(-3px)}
+  .hero-art{position:relative}
+  .hero-art img{width:100%;border-radius:20px;box-shadow:0 24px 50px rgba(0,0,0,.4);transform:rotate(-2deg);border:6px solid #fff}
+  .hero-badge{position:absolute;bottom:-16px;left:-14px;background:var(--yellow);color:var(--navy);font-family:'Fredoka';font-size:14px;padding:10px 16px;border-radius:14px;box-shadow:var(--shadow);transform:rotate(-4deg)}
+
+  /* ── TRUST STRIP ── */
+  .trust{background:#fff;padding:26px 0;box-shadow:var(--shadow)}
+  .trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center}
+  .trust .item .ic{font-size:30px}
+  .trust .item b{display:block;font-family:'Fredoka';font-size:15px;color:var(--navy);margin-top:6px;text-transform:uppercase}
+  .trust .item span{font-size:13px;color:#5b6080;font-weight:700}
+
+  /* ── SECTION ── */
+  section{padding:56px 0}
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 36px}
+  .sec-head .kicker{font-family:'Fredoka';letter-spacing:3px;color:var(--blue);font-size:14px}
+  .sec-head h2{font-size:clamp(26px,3.4vw,38px);color:var(--navy);margin:6px 0 10px}
+  .sec-head p{font-size:16px;color:#5b6080;font-weight:700}
+
+  /* ── FREEBIE BANNER ── */
+  .freebie{background:linear-gradient(120deg,var(--green),#2e7d32);color:#fff;border-radius:22px;padding:34px;display:flex;align-items:center;justify-content:space-between;gap:26px;box-shadow:var(--shadow);flex-wrap:wrap}
+  .freebie img{height:130px;width:130px;object-fit:cover;border-radius:12px;border:4px solid #fff}
+  .freebie h3{font-size:26px}
+  .freebie p{font-weight:700;max-width:460px;margin-top:6px;opacity:.95}
+
+  /* ── PRODUCT GRID ── */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .card{background:var(--card);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
+  .card:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(26,35,126,.22)}
+  .card .thumb{position:relative;aspect-ratio:1/1;background:#eef1fb;overflow:hidden}
+  .card .thumb img{width:100%;height:100%;object-fit:cover}
+  .card .pill{position:absolute;top:12px;left:12px;background:var(--green);color:#fff;font-family:'Fredoka';font-size:12px;padding:6px 13px;border-radius:30px;letter-spacing:1px;box-shadow:0 4px 10px rgba(0,0,0,.2)}
+  .card .body{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1}
+  .card h3{font-size:17px;color:var(--navy);line-height:1.15;min-height:44px}
+  .card .desc{font-size:13.5px;color:#5b6080;font-weight:700;margin:8px 0 14px;flex:1}
+  .card .foot{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .card .price{font-family:'Fredoka';font-size:22px;color:var(--green)}
+  .card .price .was{font-size:14px;color:#9aa2b8;font-weight:600;text-decoration:line-through;margin-right:6px}
+  .sale-bar{background:var(--gold);color:var(--navy);text-align:center;font-family:'Fredoka';font-weight:700;font-size:13px;letter-spacing:.4px;padding:7px 12px}
+  .buy{background:var(--blue);color:#fff !important;font-family:'Fredoka';font-size:14px;padding:11px 18px;border-radius:40px;font-weight:700;box-shadow:0 6px 14px rgba(21,101,192,.32);transition:transform .15s;white-space:nowrap}
+  .buy:hover{transform:translateY(-2px);background:#0d47a1}
+  .card.free .price{color:var(--navy)}
+  .card.free .buy{background:var(--green);box-shadow:0 6px 14px rgba(67,160,71,.32)}
+  .seal-badge{position:absolute;top:10px;right:10px;width:54px;height:54px;border-radius:50%;box-shadow:0 3px 10px rgba(0,0,0,.35);z-index:2}
+
+  /* ── MEET THE REAL TATUM & KASH ── */
+  .meet{background:#fff}
+  .meet-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .meet-card{background:var(--cloud);border-radius:20px;padding:22px 26px;display:flex;gap:26px;align-items:center;box-shadow:var(--shadow)}
+  .meet-pics{position:relative;flex-shrink:0}
+  .meet-real{width:135px;height:180px;object-fit:cover;object-position:top center;border-radius:14px;border:4px solid #fff;box-shadow:var(--shadow);display:block}
+  .meet-anim{position:absolute;bottom:-10px;right:-12px;width:74px;height:74px;border-radius:50%;background:var(--navy);object-fit:contain;border:3px solid var(--gold);box-shadow:var(--shadow)}
+  .meet-info .role{font-family:'Fredoka';color:var(--blue);font-size:12px;letter-spacing:1.5px}
+  .meet-info h3{color:var(--navy);font-size:24px;margin-top:2px}
+  .meet-info p{font-size:14px;color:#5b6080;font-weight:700;margin-top:8px}
+  .yt-banner{margin-top:32px;background:linear-gradient(120deg,#c62828,#7b0000);color:#fff;border-radius:20px;padding:30px 24px;text-align:center;box-shadow:var(--shadow)}
+  .yt-banner h3{font-size:clamp(20px,2.6vw,26px)}
+  .yt-banner p{font-weight:700;opacity:.95;margin-top:8px}
+  .yt-pill{display:inline-block;margin-top:16px;background:#fff;color:#c62828;font-family:'Fredoka';padding:10px 20px;border-radius:30px;font-size:14px;letter-spacing:1.5px}
+
+  /* ── HOW IT WORKS ── */
+  .how{background:#fff}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .step{text-align:center;padding:10px}
+  .step .n{width:56px;height:56px;margin:0 auto 14px;border-radius:50%;background:var(--yellow);color:var(--navy);font-family:'Fredoka';font-size:26px;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow)}
+  .step h3{color:var(--navy);font-size:19px}
+  .step p{font-size:14.5px;color:#5b6080;font-weight:700;margin-top:6px}
+
+  /* ── CTA BANNER ── */
+  .cta-banner{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;text-align:center;border-radius:24px;padding:48px 24px;box-shadow:var(--shadow)}
+  .cta-banner h2{font-size:clamp(26px,3.4vw,38px)}
+  .cta-banner p{font-weight:700;font-size:17px;margin:12px 0 24px;opacity:.95}
+
+  /* ── FOOTER ── */
+  footer{background:var(--navy);color:#cdd3ff;padding:40px 0 26px;margin-top:56px}
+  footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+  footer .fbrand{display:flex;align-items:center;gap:12px}
+  footer .fbrand img{height:40px}
+  footer .fbrand b{font-family:'Fredoka';color:#fff;font-size:16px;text-transform:uppercase}
+  footer a{color:var(--gold);font-weight:800}
+  footer .legal{width:100%;border-top:1px solid rgba(255,255,255,.15);margin-top:22px;padding-top:16px;font-size:12.5px;color:#8b92c9;text-align:center}
+
+  @media(max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;text-align:center}
+    .hero-btns{justify-content:center}
+    .hero p.sub{margin-left:auto;margin-right:auto}
+    .hero-art{max-width:420px;margin:0 auto}
+    .trust .wrap{grid-template-columns:repeat(2,1fr);gap:24px}
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .steps{grid-template-columns:1fr}
+    .meet-grid{grid-template-columns:1fr}
+    .freebie{flex-direction:column;text-align:center}
+  }
+  @media(max-width:560px){
+    .grid{grid-template-columns:1fr}
+    .hero-seal{height:56px}
+    .topbar .wrap{gap:14px}
+  }
+</style>
+</head>
+<body>
+
+<!-- SALE BAR -->
+<div class="sale-bar">🎉 LAUNCH SALE — 25% OFF EVERY BLUEPRINT · <span style="text-decoration:line-through;opacity:.6">$13.32</span> now $9.99</div>
+
+<!-- TOP BAR -->
+<div class="topbar"><div class="wrap">
+  <span class="tb">🌍 Ships Worldwide</span>
+  <span class="tb">⚡ Instant Download</span>
+  <span class="tb">🗣️ 6-Language Blueprints</span>
+  <span class="tb">📦 Works With ANY Cardboard Box</span>
+</div></div>
+
+<!-- NAV -->
+<nav><div class="wrap">
+  <a class="brand" href="#top">
+    <img src="images/hee-logo.png" alt="High End Entertainment crown logo">
+    <div><b>Cardboard Creations</b><small>BY TATUM &amp; KASH</small></div>
+  </a>
+  <div class="nav-right">
+    <div id="google_translate_element" title="Read in your language"></div>
+    <a class="nav-cta" href="#shop">🛒 Shop Blueprints</a>
+  </div>
+</div></nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <img class="hero-seal" src="images/seal.png" alt="Official Tatum & Kash brand seal">
+  <div class="wrap">
+    <div>
+      <span class="tag">DREAM IT. BUILD IT. OWN IT.</span>
+      <h1>Turn Any Cardboard Box Into an <em>Epic Life-Size Build</em></h1>
+      <p class="sub">Tatum &amp; Kash printable blueprints turn ordinary cardboard into castles, rockets, pirate ships, race cars &amp; wearable robot suits. Download instantly — build together today.</p>
+      <div class="hero-btns">
+        <a class="btn btn-gold" href="#shop">🛒 Shop All Blueprints</a>
+        <a class="btn btn-ghost" href="#freebie">🎁 Get a FREE Starter Kit</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="images/robot-suit.jpg" alt="Life-size cardboard robot suit build by Tatum & Kash">
+      <div class="hero-badge">⭐ Instant PDF · Any Language</div>
+    </div>
+  </div>
+</header>
+
+<!-- TRUST STRIP -->
+<div class="trust"><div class="wrap">
+  <div class="item"><div class="ic">⚡</div><b>Instant Download</b><span>Delivered to your inbox in minutes</span></div>
+  <div class="item"><div class="ic">🗣️</div><b>6 Languages</b><span>EN · ES · PT · FR · DE · NL — download only yours</span></div>
+  <div class="item"><div class="ic">📐</div><b>Step-by-Step</b><span>Cut, fold &amp; build — no experience needed</span></div>
+  <div class="item"><div class="ic">♻️</div><b>Just Add Cardboard</b><span>Reuse boxes you already have</span></div>
+</div></div>
+
+<!-- FREEBIE -->
+<section id="freebie"><div class="wrap">
+  <div class="freebie">
+    <img src="images/starter-kit.jpg" alt="Free Tatum & Kash Cardboard Creations starter kit">
+    <div>
+      <h3>🎁 Start Free — Cardboard Creations Starter Kit</h3>
+      <p>Grab our free mini-blueprint plus 3 engineering challenges. See how easy (and fun) it is before you build the big stuff. Pay-what-you-want — set it to $0.</p>
+    </div>
+    <a class="btn btn-gold" href="go/starter/">Get It Free →</a>
+  </div>
+</div></section>
+
+<!-- SHOP -->
+<section id="shop">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">THE BLUEPRINT COLLECTION</div>
+      <h2>Pick Your Next Big Build</h2>
+      <p>Every blueprint is a printable PDF with cut lines, fold guides &amp; a full parts list — with instructions in 6 languages, split so you download and print only the one you need. Buy once, build again and again.</p>
+    </div>
+    <div class="grid" id="product-grid"></div>
+  </div>
+</section>
+
+<!-- MEET THE REAL TATUM & KASH -->
+<section class="meet"><div class="wrap">
+  <div class="sec-head">
+    <div class="kicker">THE REALNESS BEHIND THE CHARACTERS</div>
+    <h2>Meet the Real Tatum &amp; Kash</h2>
+    <p>Our characters aren't made up — they're real. Tatum &amp; Kash are a real big-sister-and-little-brother duo, and the inspiration behind every single build.</p>
+  </div>
+  <div class="meet-grid">
+    <div class="meet-card">
+      <div class="meet-pics">
+        <img class="meet-real" src="images/tatum-real.jpg" alt="The real Tatum">
+        <img class="meet-anim" src="images/tatum-animated.png" alt="Tatum animated character">
+      </div>
+      <div class="meet-info">
+        <div class="role">THE ARCHITECT · BIG SISTER</div>
+        <h3>Tatum</h3>
+        <p>The planner and the dreamer. If she can imagine it, she can design it — then talk her little brother into building it with her.</p>
+      </div>
+    </div>
+    <div class="meet-card">
+      <div class="meet-pics">
+        <img class="meet-real" src="images/kash-real.jpg" alt="The real Kash">
+        <img class="meet-anim" src="images/kash-animated.png" alt="Kash animated character">
+      </div>
+      <div class="meet-info">
+        <div class="role">THE BUILDER · LITTLE BROTHER</div>
+        <h3>Kash</h3>
+        <p>The hands-on hero. Kash grabs the tape, the boxes and the big ideas — and brings every creation to life.</p>
+      </div>
+    </div>
+  </div>
+  <div class="yt-banner">
+    <h3>🎬 The Tatum &amp; Kash Show — Streaming Soon on YouTube</h3>
+    <p>The same characters you build with are coming to life on screen. Subscribe now so you're there for episode one.</p>
+    <a class="yt-pill" href="https://www.youtube.com/@tatumandkash?sub_confirmation=1" target="_blank" rel="noopener">▶ Subscribe on YouTube</a>
+  </div>
+</div></section>
+
+<!-- HOW IT WORKS -->
+<section class="how"><div class="wrap">
+  <div class="sec-head">
+    <div class="kicker">EASY AS 1-2-3</div>
+    <h2>From Download to Masterpiece</h2>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><h3>Download</h3><p>Buy your blueprint and get the printable PDF instantly — anywhere in the world.</p></div>
+    <div class="step"><div class="n">2</div><h3>Print &amp; Cut</h3><p>Print at home, trace onto cardboard, and follow the color-coded cut &amp; fold lines.</p></div>
+    <div class="step"><div class="n">3</div><h3>Build &amp; Play</h3><p>Assemble your life-size creation and let the imagination run wild. You built it!</p></div>
+  </div>
+</div></section>
+
+<!-- CTA BANNER -->
+<section><div class="wrap">
+  <div class="cta-banner">
+    <h2>Build Something Legendary This Weekend</h2>
+    <p>10 blueprints. One imagination with no limits. Start with the free kit or dive into a full build.</p>
+    <a class="btn btn-gold" href="#shop">🛒 Browse All Blueprints</a>
+  </div>
+</div></section>
+
+<!-- FOOTER -->
+<footer><div class="wrap">
+  <div class="fbrand">
+    <img src="images/hee-logo.png" alt="High End Entertainment">
+    <div><b>Cardboard Creations</b><br><span style="font-size:12px">by Tatum &amp; Kash · High End Entertainment LLC</span></div>
+  </div>
+  <div style="text-align:right;font-weight:800">
+    <div>Questions? <a href="mailto:rashad@highendmusiconline.com">rashad@highendmusiconline.com</a></div>
+    <div style="margin-top:6px"><a href="#shop">Browse all builds →</a></div>
+  </div>
+  <div class="legal">
+    © 2026 High End Entertainment, LLC. All rights reserved. Tatum &amp; Kash™ and Cardboard Creations™ are trademarks of High End Entertainment, LLC.
+    Digital products are non-refundable once downloaded. Dream It. Build It. Own It.
+  </div>
+</div></footer>
+
+<script>
+const PRODUCTS = [
+  {name:"Cardboard Castle: Fortress Alpha", desc:"Life-size medieval castle with a working drawbridge & towers.", img:"castle.jpg", slug:"castle", price:"9.99"},
+  {name:"Interstellar Cockpit (HEE-1)", desc:"Sit-in life-size spaceship cockpit for the young commander.", img:"cockpit.jpg", slug:"cockpit", price:"9.99"},
+  {name:"Cardboard Pirate Ship", desc:"Full hull, mast & sails — set sail for adventure.", img:"pirate-ship.jpg", slug:"pirate", price:"9.99"},
+  {name:"HEE-BOT Mark 1 Robot Suit", desc:"Life-size wearable robot suit kids can suit up in.", img:"robot-suit.jpg", slug:"robot", price:"9.99"},
+  {name:"Race Car Cockpit", desc:"Sit-in Formula racing car cockpit — start your engines.", img:"race-car.jpg", slug:"race-car", price:"9.99"},
+  {name:"Cardboard Fire Truck", desc:"Life-size sit-in fire truck with a bold siren design.", img:"fire-truck.jpg", slug:"fire-truck", price:"9.99"},
+  {name:"Cardboard Playhouse", desc:"Real doors, windows & a chimney — a house of their own.", img:"playhouse.jpg", slug:"playhouse", price:"9.99"},
+  {name:"Giant Dinosaur Egg", desc:"A 4-foot life-size egg kids can hatch right out of.", img:"dino-egg.jpg", slug:"dino", price:"9.99"},
+  {name:"Knight Armor Set", desc:"6-piece life-size wearable armor for brave knights.", img:"knight-armor.jpg", slug:"knight", price:"9.99"},
+  {name:"Starter Kit + 3 Challenges", desc:"Mini blueprint plus 3 engineering challenges. Free to start.", img:"starter-kit.jpg", slug:"starter", price:"free"}
+];
+
+const grid = document.getElementById('product-grid');
+grid.innerHTML = PRODUCTS.map(p => {
+  const free = p.price === 'free';
+  const priceHtml = free ? 'FREE' : `<span class="was">$13.32</span>$${p.price}`;
+  const pill = free ? '<div class="pill">FREE START</div>' : '<div class="pill" style="background:var(--gold);color:var(--navy)">25% OFF</div>';
+  const btn = free ? 'Get It Free →' : 'Buy Now →';
+  return `<div class="card${free ? ' free' : ''}">
+    <div class="thumb">${pill}<img src="images/${p.img}" alt="${p.name} cardboard blueprint by Tatum & Kash" loading="lazy"></div>
+    <div class="body">
+      <h3>${p.name}</h3>
+      <div class="desc">${p.desc}</div>
+      <div class="foot">
+        <div class="price">${priceHtml}</div>
+        <a class="buy" href="go/${p.slug}/">${btn}</a>
+      </div>
+    </div>
+  </div>`;
+}).join('');
+</script>
+
+<!-- Read-in-any-language (Google Translate) -->
+<script type="text/javascript">
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({
+    pageLanguage:'en',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay:false
+  }, 'google_translate_element');
+}
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

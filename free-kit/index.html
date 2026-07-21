@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L4KLN8BJCS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L4KLN8BJCS');
+</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
@@ -56,6 +65,9 @@
     var email=emailEl.value.trim();
     if(!valid(email)){status.className='status err';status.textContent='Please enter a valid email.';return;}
     btn.disabled=true;btn.textContent='Sending your kit…';status.className='status';status.textContent='';
+
+    // GA4: count this as a lead conversion.
+    if(typeof gtag==='function'){ gtag('event','generate_lead',{currency:'USD',value:0,source:'free-kit-gate'}); }
 
     // Capture the lead (FormSubmit — delivers to the HEE inbox). Never block the free kit on capture.
     var done=false;

@@ -242,7 +242,7 @@
       <h3>🎁 Start Free — Cardboard Creations Starter Kit</h3>
       <p>Grab our free mini-blueprint plus 3 engineering challenges. See how easy (and fun) it is before you build the big stuff. Pay-what-you-want — set it to $0.</p>
     </div>
-    <a class="btn btn-gold" href="go/starter/">Get It Free →</a>
+    <a class="btn btn-gold" href="go/starter/" data-track="free" data-slug="starter" data-name="Starter Kit">Get It Free →</a>
   </div>
 </div></section>
 
@@ -361,7 +361,7 @@ grid.innerHTML = PRODUCTS.map(p => {
       <div class="desc">${p.desc}</div>
       <div class="foot">
         <div class="price">${priceHtml}</div>
-        <a class="buy" href="go/${p.slug}/">${btn}</a>
+        <a class="buy" href="go/${p.slug}/" data-track="${free ? 'free' : 'buy'}" data-slug="${p.slug}" data-name="${p.name.replace(/"/g,'&quot;')}" data-price="${free ? 0 : p.price}">${btn}</a>
       </div>
     </div>
   </div>`;
@@ -379,5 +379,23 @@ function googleTranslateElementInit(){
 }
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<!-- GA4 conversion tracking: Buy Now = begin_checkout, Get It Free = select_promotion.
+     Delegated so it covers both the static freebie banner and the JS-rendered product cards.
+     GA4 sends via sendBeacon, so the event survives the immediate navigation to /go/. -->
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target.closest && e.target.closest('a[data-track]');
+  if(!a || typeof gtag !== 'function') return;
+  var slug = a.getAttribute('data-slug'),
+      name = a.getAttribute('data-name');
+  if(a.getAttribute('data-track') === 'buy'){
+    var price = parseFloat(a.getAttribute('data-price')) || 9.99;
+    gtag('event','begin_checkout',{currency:'USD',value:price,items:[{item_id:slug,item_name:name,price:price,quantity:1}]});
+  } else {
+    gtag('event','select_promotion',{promotion_id:'free-starter-kit',promotion_name:'Free Starter Kit',items:[{item_id:slug||'starter',item_name:name||'Starter Kit'}]});
+  }
+});
+</script>
 </body>
 </html>

@@ -43,5 +43,10 @@
     "product": "prod_Upa9TuMBUmYhfh",
     "price": "price_1TpuzDDwt14VeVegPvXm1sG2",
     "url": "https://buy.stripe.com/9B6fZh8Bjaxl8yJe0vcfK08"
+  },
+  "rocket": {
+    "product": "prod_V7wl0rAaMJkTE4",
+    "price": "price_1U7grfDwt14VeVegwoKkE9fe",
+    "url": "https://buy.stripe.com/dRmbJ1dVD48X5mxaOjcfK09"
   }
 }

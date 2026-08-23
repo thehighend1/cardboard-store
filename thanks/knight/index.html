@@ -19,6 +19,8 @@
   h1{font-family:'Fredoka';color:var(--navy);font-size:26px;margin:10px 0 6px}
   .sub{color:#5a6478;font-size:15px;margin-bottom:26px}
   .check{font-size:46px}
+  .match{outline:3px solid #43A047;outline-offset:2px}
+  .matchnote{font-size:12.5px;color:#43A047;font-weight:700;margin:0 0 10px}
   .langs{display:flex;flex-direction:column;gap:11px;margin:8px 0 6px}
   .dl{display:block;background:var(--blue);color:#fff!important;text-decoration:none;font-family:'Fredoka';font-weight:600;font-size:16px;padding:14px 18px;border-radius:40px;box-shadow:0 6px 14px rgba(21,101,192,.3);transition:transform .15s}
   .dl:hover{transform:translateY(-2px);background:#0d47a1}
@@ -40,4 +42,25 @@
     <p class="note">Each file is a printable PDF with cut lines, fold guides & a full parts list. Save it to your device now — you can re-download from this page anytime you have the link. Trouble? Reply to your Stripe receipt email.</p>
     <p class="foot">High End Entertainment, LLC · Cardboard Creations</p>
   </div>
+
+<script>
+/* Surface the visitor's own language first. Every button stays present and in the
+   same order underneath — this only promotes the match and labels it, so nothing
+   is hidden from anyone whose browser language we guess wrong. */
+(function(){
+  var MAP={en:'English',es:'Español',pt:'Português',fr:'Français',de:'Deutsch',nl:'Nederlands'};
+  var want=(navigator.languages&&navigator.languages[0]||navigator.language||'en').slice(0,2).toLowerCase();
+  var label=MAP[want]; if(!label) return;
+  var box=document.querySelector('.langs'); if(!box) return;
+  var links=[].slice.call(box.querySelectorAll('a.dl'));
+  var hit=links.filter(function(a){return a.textContent.indexOf(label)!==-1;})[0];
+  if(!hit||hit===links[0]) { if(hit) hit.classList.add('match'); return; }
+  hit.classList.add('match');
+  box.insertBefore(hit,box.firstChild);
+  var note=document.createElement('p');
+  note.className='matchnote';
+  note.textContent='Your browser is set to '+label+' — that one is first. All languages are included.';
+  box.parentNode.insertBefore(note,box);
+})();
+</script>
 </body></html>

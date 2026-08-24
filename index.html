@@ -320,7 +320,7 @@
 <section><div class="wrap">
   <div class="cta-banner">
     <h2>Build Something Legendary This Weekend</h2>
-    <p>10 blueprints. One imagination with no limits. Start with the free kit or dive into a full build.</p>
+    <p>13 blueprints. One imagination with no limits. Start with the free mask or dive into a full build.</p>
     <a class="btn btn-gold" href="#shop">🛒 Browse All Blueprints</a>
   </div>
 </div></section>
@@ -355,15 +355,23 @@ const PRODUCTS = [
   {name:"Cardboard Rocket Ship", desc:"Life-size stand-in rocket with a launch pad — 3… 2… 1… liftoff.", img:"rocket-ship.jpg", slug:"rocket", price:"9.99"},
   {name:"Cardboard Monster Mask", desc:"Wearable creature mask with a boxed snout, horns & teeth.", img:"monster-mask.jpg", slug:"mask", price:"9.99"},
   {name:"Cardboard Wings", desc:"Strutted wings you can paint as feathers, leather or scales.", img:"cardboard-wings.jpg", slug:"wings", price:"9.99"},
-  {name:"Cardboard Beast Suit", desc:"15-piece creature suit with a faceted skull, spine ridge & tail.", img:"beast-suit.jpg", slug:"beast", price:"14.99"},
+  {name:"Cardboard Beast Suit", desc:"15-piece creature suit with a faceted skull, spine ridge & tail.", img:"beast-suit.jpg", slug:"beast", price:"14.99", was:"19.99"},
+  {name:"Halloween Bundle — All 3 Costume Builds", desc:"Monster Mask, Wings & Beast Suit together — 120 pages, 6 languages.", img:"halloween-bundle.jpg", slug:"bundle", price:"24.99", was:"34.97"},
   {name:"Creature Mask (FREE)", desc:"Wearable 3-piece horned mask. One box, 20 minutes, no cost.", img:"free-mask.jpg", slug:"freemask", price:"free"}
 ];
 
 const grid = document.getElementById('product-grid');
 grid.innerHTML = PRODUCTS.map(p => {
   const free = p.price === 'free';
-  const priceHtml = free ? 'FREE' : `<span class="was">$13.32</span>$${p.price}`;
-  const pill = free ? '<div class="pill">FREE START</div>' : '<div class="pill" style="background:var(--gold);color:var(--navy)">25% OFF</div>';
+  // The "was" price and the discount pill are per-product. They used to be hardcoded
+  // to $13.32 / 25% OFF for everything, which struck through a price LOWER than the
+  // Beast Suit's own $14.99 — a price rise dressed as a discount. Default stays
+  // $13.32 (the Etsy price of the $9.99 builds), and the pill is computed, so the
+  // badge can never disagree with the two numbers printed next to it.
+  const was = p.was || '13.32';
+  const off = Math.round((1 - parseFloat(p.price) / parseFloat(was)) * 100);
+  const priceHtml = free ? 'FREE' : `<span class="was">$${was}</span>$${p.price}`;
+  const pill = free ? '<div class="pill">FREE START</div>' : `<div class="pill" style="background:var(--gold);color:var(--navy)">${off}% OFF</div>`;
   const btn = free ? 'Get It Free →' : 'Buy Now →';
   return `<div class="card${free ? ' free' : ''}">
     <div class="thumb">${pill}<img src="images/${p.img}" alt="${p.name} cardboard blueprint by Tatum & Kash" loading="lazy"></div>

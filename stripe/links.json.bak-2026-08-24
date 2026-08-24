@@ -53,20 +53,5 @@
     "product": "prod_V8JewUWyDRIA6W",
     "price": "price_1U831QDwt14VeVeg0MDFRnXE",
     "url": "https://buy.stripe.com/4gM9AT18RdJx8yJ6y3cfK0d"
-  },
-  "beast": {
-    "product": "prod_V891YL20ixFTIs",
-    "price": "price_1U7sj4Dwt14VeVeg7Tbk8AHJ",
-    "url": "https://buy.stripe.com/5kQfZhcRz8pdaGR8GbcfK0c"
-  },
-  "mask": {
-    "product": "prod_V891sSBl4LY0Nb",
-    "price": "price_1U7sj2Dwt14VeVegSOrDvNDg",
-    "url": "https://buy.stripe.com/4gMeVd5p75d18yJ4pVcfK0a"
-  },
-  "wings": {
-    "product": "prod_V891TRrSbbCna4",
-    "price": "price_1U7sj3Dwt14VeVegrdwQ3IRr",
-    "url": "https://buy.stripe.com/9B6cN53gZgVJ16h9KfcfK0b"
   }
 }

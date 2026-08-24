@@ -216,7 +216,7 @@
       <p class="sub">Tatum &amp; Kash printable blueprints turn ordinary cardboard into castles, rockets, pirate ships, race cars &amp; wearable robot suits. Download instantly — build together today.</p>
       <div class="hero-btns">
         <a class="btn btn-gold" href="#shop">🛒 Shop All Blueprints</a>
-        <a class="btn btn-ghost" href="#freebie">🎁 Get a FREE Starter Kit</a>
+        <a class="btn btn-ghost" href="#freebie">🎁 Get a FREE Creature Mask</a>
       </div>
     </div>
     <div class="hero-art">
@@ -237,12 +237,15 @@
 <!-- FREEBIE -->
 <section id="freebie"><div class="wrap">
   <div class="freebie">
-    <img src="images/starter-kit.jpg" alt="Free Tatum & Kash Cardboard Creations starter kit">
+    <!-- SEASONAL SWAP (Halloween 2026): Creature Mask is featured through Oct 31.
+         On Nov 1 revert this block + the hero CTA + the PRODUCTS entry to the Starter Kit.
+         The starter kit itself stays live at /free-kit/ — it is only un-featured. -->
+    <img src="images/free-mask.jpg" alt="Free Tatum &amp; Kash wearable cardboard creature mask blueprint">
     <div>
-      <h3>🎁 Start Free — Cardboard Creations Starter Kit</h3>
-      <p>Grab our free mini-blueprint plus 3 engineering challenges. See how easy (and fun) it is before you build the big stuff. Pay-what-you-want — set it to $0.</p>
+      <h3>🎃 Start Free — Wearable Cardboard Creature Mask</h3>
+      <p>One box, twenty minutes, a horned mask your kid can actually wear out on Halloween. Full-size cut templates and 6 illustrated steps — the same format as our paid builds. Free, in 6 languages.</p>
     </div>
-    <a class="btn btn-gold" href="go/starter/" data-track="free" data-slug="starter" data-name="Starter Kit">Get It Free →</a>
+    <a class="btn btn-gold" href="go/freemask/" data-track="free" data-slug="freemask" data-name="Creature Mask (FREE)">Get It Free →</a>
   </div>
 </div></section>
 
@@ -349,8 +352,7 @@ const PRODUCTS = [
   {name:"Cardboard Monster Mask", desc:"Wearable creature mask with a boxed snout, horns & teeth.", img:"monster-mask.jpg", slug:"mask", price:"9.99"},
   {name:"Cardboard Wings", desc:"Strutted wings you can paint as feathers, leather or scales.", img:"cardboard-wings.jpg", slug:"wings", price:"9.99"},
   {name:"Cardboard Beast Suit", desc:"15-piece creature suit with a faceted skull, spine ridge & tail.", img:"beast-suit.jpg", slug:"beast", price:"14.99"},
-  {name:"Creature Mask (FREE)", desc:"Wearable 3-piece horned mask. One box, 20 minutes, no cost.", img:"free-mask.jpg", slug:"freemask", price:"free"},
-  {name:"Starter Kit + 3 Challenges", desc:"Mini blueprint plus 3 engineering challenges. Free to start.", img:"starter-kit.jpg", slug:"starter", price:"free"}
+  {name:"Creature Mask (FREE)", desc:"Wearable 3-piece horned mask. One box, 20 minutes, no cost.", img:"free-mask.jpg", slug:"freemask", price:"free"}
 ];
 
 const grid = document.getElementById('product-grid');
@@ -398,7 +400,7 @@ document.addEventListener('click', function(e){
     var price = parseFloat(a.getAttribute('data-price')) || 9.99;
     gtag('event','begin_checkout',{currency:'USD',value:price,items:[{item_id:slug,item_name:name,price:price,quantity:1}]});
   } else {
-    gtag('event','select_promotion',{promotion_id:'free-starter-kit',promotion_name:'Free Starter Kit',items:[{item_id:slug||'starter',item_name:name||'Starter Kit'}]});
+    gtag('event','select_promotion',{promotion_id:'free-creature-mask',promotion_name:'Free Creature Mask',items:[{item_id:slug||'freemask',item_name:name||'Creature Mask (FREE)'}]});
   }
 });
 </script>

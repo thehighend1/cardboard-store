@@ -1,15 +1,27 @@
-/go/castle  https://buy.stripe.com/aFa28r9Fn0WL6qB8GbcfK00  302
-/go/cockpit  https://buy.stripe.com/3cIeVdeZHaxl02dcWrcfK01  302
-/go/pirate  https://buy.stripe.com/14AaEX18R34TcOZ1dJcfK02  302
-/go/robot  https://buy.stripe.com/6oU4gzaJr5d1eX76y3cfK03  302
-/go/race-car  https://buy.stripe.com/bJedR95p78pd8yJ3lRcfK04  302
-/go/fire-truck  https://buy.stripe.com/14A3cv6tb6h5dT3e0vcfK05  302
-/go/playhouse  https://buy.stripe.com/7sYfZh18R5d17uF8GbcfK06  302
-/go/dino  https://buy.stripe.com/6oU4gz4l3eNB6qB5tZcfK07  302
-/go/knight  https://buy.stripe.com/9B6fZh8Bjaxl8yJe0vcfK08  302
-/go/rocket  https://buy.stripe.com/dRmbJ1dVD48X5mxaOjcfK09  302
+# NOTE: GitHub Pages IGNORES this file — verified 2026-08-25. The real
+# redirect is the meta-refresh stub in each go/<slug>/index.html.
+# Regenerate both with: node stripe/rebuild-go-stubs.js
+/go/castle  https://buy.stripe.com/28EbJ1cRzaxl8yJ9KfcfK0m  302
+/go/cockpit  https://buy.stripe.com/14AbJ18Bj0WLeX75tZcfK0n  302
+/go/pirate  https://buy.stripe.com/5kQfZhg3LdJx6qBg8DcfK0o  302
+/go/robot  https://buy.stripe.com/fZu4gzg3LcFt3ep1dJcfK0p  302
+/go/race-car  https://buy.stripe.com/bJe14n5p7gVJ2al3lRcfK0q  302
+/go/fire-truck  https://buy.stripe.com/8x228rdVD20P3epg8DcfK0r  302
+/go/playhouse  https://buy.stripe.com/00w00j7xf5d14itbSncfK0s  302
+/go/dino  https://buy.stripe.com/eVqfZheZH0WLaGRg8DcfK0t  302
+/go/knight  https://buy.stripe.com/14A3cv18R34TdT37C7cfK0u  302
+/go/rocket  https://buy.stripe.com/eVq4gz6tb48X02dbSncfK0v  302
+/go/bundle  https://buy.stripe.com/4gM9AT18RdJx8yJ6y3cfK0d  302
+/go/beast  https://buy.stripe.com/dRmdR96tb6h5eX78GbcfK0y  302
+/go/mask  https://buy.stripe.com/6oUfZhaJr34T5mx7C7cfK0w  302
+/go/wings  https://buy.stripe.com/14A14n04N8pd9CN3lRcfK0x  302
+/go/complete-collection  https://buy.stripe.com/14A14n7xfgVJ8yJ5tZcfK0e  302
+/go/wearables-collection  https://buy.stripe.com/bJe28r2cV0WLcOZ09FcfK0f  302
+/go/vehicles-collection  https://buy.stripe.com/4gM7sLeZHfRF2al2hNcfK0g  302
+/go/dens-collection  https://buy.stripe.com/14AbJ1cRz5d16qB6y3cfK0h  302
+/go/weekend-builds  https://buy.stripe.com/7sY4gz5p7axl8yJ7C7cfK0i  302
+/go/quick-builds  https://buy.stripe.com/4gM9ATdVD9theX74pVcfK0j  302
+/go/party-pack  https://buy.stripe.com/3cIdR98Bj7l94it9KfcfK0k  302
+/go/space-pack  https://buy.stripe.com/8x25kD2cV20P7uFe0vcfK0l  302
 /go/starter  /free-kit/  302
-/go/mask  https://buy.stripe.com/4gMeVd5p75d18yJ4pVcfK0a  302
-/go/wings  https://buy.stripe.com/9B6cN53gZgVJ16h9KfcfK0b  302
-/go/beast  https://buy.stripe.com/5kQfZhcRz8pdaGR8GbcfK0c  302
 /go/freemask  /free-mask/  302

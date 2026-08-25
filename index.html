@@ -17,7 +17,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cardboard Creations by Tatum &amp; Kash — Life-Size Cardboard Blueprints for Kids</title>
-<meta name="description" content="Printable life-size cardboard build blueprints for kids by Tatum & Kash — castles, rockets, pirate ships, robot suits & more. Instant PDF download in 4 languages, works with any cardboard box, ships worldwide.">
+<meta name="description" content="Printable life-size cardboard build blueprints for kids by Tatum & Kash — castles, rockets, pirate ships, robot suits & more. Instant PDF download in 6 languages, works with any cardboard box, ships worldwide.">
 <meta name="keywords" content="cardboard blueprint, cardboard castle, kids craft, printable, DIY cardboard, cardboard playhouse, cardboard costume, cardboard fort, Tatum and Kash, STEM kids activity, multilingual blueprint">
 <meta name="author" content="High End Entertainment LLC">
 
@@ -123,7 +123,8 @@
   .card .foot{display:flex;align-items:center;justify-content:space-between;gap:10px}
   .card .price{font-family:'Fredoka';font-size:22px;color:var(--green)}
   .card .price .was{font-size:14px;color:#9aa2b8;font-weight:600;text-decoration:line-through;margin-right:6px}
-  .sale-bar{background:var(--gold);color:var(--navy);text-align:center;font-family:'Fredoka';font-weight:700;font-size:13px;letter-spacing:.4px;padding:7px 12px}
+  .sale-bar{display:block;background:var(--gold);color:var(--navy);text-decoration:none;text-align:center;font-family:'Fredoka';font-weight:700;font-size:13px;letter-spacing:.4px;padding:7px 12px}
+  .sale-bar:hover{filter:brightness(1.06)}
   .buy{background:var(--blue);color:#fff !important;font-family:'Fredoka';font-size:14px;padding:11px 18px;border-radius:40px;font-weight:700;box-shadow:0 6px 14px rgba(21,101,192,.32);transition:transform .15s;white-space:nowrap}
   .buy:hover{transform:translateY(-2px);background:#0d47a1}
   .card.free .price{color:var(--navy)}
@@ -187,8 +188,11 @@
 </head>
 <body>
 
-<!-- SALE BAR -->
-<div class="sale-bar">🎉 LAUNCH SALE — 25% OFF EVERY BLUEPRINT · <span style="text-decoration:line-through;opacity:.6">$13.32</span> now $9.99</div>
+<!-- SALE BAR — the old copy ("25% OFF EVERY BLUEPRINT · $13.32 now $9.99") went
+     FALSE at the 2026-08-25 reprice: singles are $12.99 and carry no discount.
+     The only true saving on this store is now the bundles, so the bar sells those.
+     56% is the Complete Collection: $175.87 of singles for $77.92. -->
+<a class="sale-bar" href="#bundles">🎉 BUNDLE &amp; SAVE UP TO 56% — all 13 builds <span style="text-decoration:line-through;opacity:.6">$175.87</span> $77.92 →</a>
 
 <!-- TOP BAR -->
 <div class="topbar"><div class="wrap">
@@ -350,19 +354,19 @@
 
 <script>
 const PRODUCTS = [
-  {name:"Cardboard Castle: Fortress Alpha", desc:"Walk-through gatehouse arch, four towers & battlements throughout.", img:"castle.jpg", slug:"castle", price:"9.99"},
-  {name:"Interstellar Cockpit (HEE-1)", desc:"Sit-in life-size spaceship cockpit for the young commander.", img:"cockpit.jpg", slug:"cockpit", price:"9.99"},
-  {name:"Cardboard Pirate Ship", desc:"Full hull, mast & sails — set sail for adventure.", img:"pirate-ship.jpg", slug:"pirate", price:"9.99"},
-  {name:"HEE-BOT Mark 1 Robot Suit", desc:"Life-size wearable robot suit kids can suit up in.", img:"robot-suit.jpg", slug:"robot", price:"9.99"},
-  {name:"Race Car Cockpit", desc:"Sit-in Formula racing car cockpit — start your engines.", img:"race-car.jpg", slug:"race-car", price:"9.99"},
-  {name:"Cardboard Fire Truck", desc:"Life-size sit-in fire truck with a bold siren design.", img:"fire-truck.jpg", slug:"fire-truck", price:"9.99"},
-  {name:"Cardboard Playhouse", desc:"Real doors, windows & a chimney — a house of their own.", img:"playhouse.jpg", slug:"playhouse", price:"9.99"},
-  {name:"Giant Dinosaur Egg", desc:"A 4-foot life-size egg kids can hatch right out of.", img:"dino-egg.jpg", slug:"dino", price:"9.99"},
-  {name:"Knight Armor Set", desc:"8-piece life-size wearable armor with a kite shield.", img:"knight-armor.jpg", slug:"knight", price:"9.99"},
-  {name:"Cardboard Rocket Ship", desc:"Life-size stand-in rocket with a launch pad — 3… 2… 1… liftoff.", img:"rocket-ship.jpg", slug:"rocket", price:"9.99"},
-  {name:"Cardboard Monster Mask", desc:"Wearable creature mask with a boxed snout, horns & teeth.", img:"monster-mask.jpg", slug:"mask", price:"9.99"},
-  {name:"Cardboard Wings", desc:"Strutted wings you can paint as feathers, leather or scales.", img:"cardboard-wings.jpg", slug:"wings", price:"9.99"},
-  {name:"Cardboard Beast Suit", desc:"15-piece creature suit with a faceted skull, spine ridge & tail.", img:"beast-suit.jpg", slug:"beast", price:"14.99", was:"19.99"},
+  {name:"Cardboard Castle: Fortress Alpha", desc:"Walk-through gatehouse arch, four towers & battlements throughout.", img:"castle.jpg", slug:"castle", price:"12.99"},
+  {name:"Interstellar Cockpit (HEE-1)", desc:"Sit-in life-size spaceship cockpit for the young commander.", img:"cockpit.jpg", slug:"cockpit", price:"12.99"},
+  {name:"Cardboard Pirate Ship", desc:"Full hull, mast & sails — set sail for adventure.", img:"pirate-ship.jpg", slug:"pirate", price:"12.99"},
+  {name:"HEE-BOT Mark 1 Robot Suit", desc:"Life-size wearable robot suit kids can suit up in.", img:"robot-suit.jpg", slug:"robot", price:"12.99"},
+  {name:"Race Car Cockpit", desc:"Sit-in Formula racing car cockpit — start your engines.", img:"race-car.jpg", slug:"race-car", price:"12.99"},
+  {name:"Cardboard Fire Truck", desc:"Life-size sit-in fire truck with a bold siren design.", img:"fire-truck.jpg", slug:"fire-truck", price:"12.99"},
+  {name:"Cardboard Playhouse", desc:"Real doors, windows & a chimney — a house of their own.", img:"playhouse.jpg", slug:"playhouse", price:"12.99"},
+  {name:"Giant Dinosaur Egg", desc:"A 4-foot life-size egg kids can hatch right out of.", img:"dino-egg.jpg", slug:"dino", price:"12.99"},
+  {name:"Knight Armor Set", desc:"8-piece life-size wearable armor with a kite shield.", img:"knight-armor.jpg", slug:"knight", price:"12.99"},
+  {name:"Cardboard Rocket Ship", desc:"Life-size stand-in rocket with a launch pad — 3… 2… 1… liftoff.", img:"rocket-ship.jpg", slug:"rocket", price:"12.99"},
+  {name:"Cardboard Monster Mask", desc:"Wearable creature mask with a boxed snout, horns & teeth.", img:"monster-mask.jpg", slug:"mask", price:"12.99"},
+  {name:"Cardboard Wings", desc:"Strutted wings you can paint as feathers, leather or scales.", img:"cardboard-wings.jpg", slug:"wings", price:"12.99"},
+  {name:"Cardboard Beast Suit", desc:"15-piece creature suit with a faceted skull, spine ridge & tail.", img:"beast-suit.jpg", slug:"beast", price:"19.99"},
   {name:"Creature Mask (FREE)", desc:"Wearable 3-piece horned mask. One box, 20 minutes, no cost.", img:"free-mask.jpg", slug:"freemask", price:"free"}
 ];
 
@@ -376,29 +380,39 @@ const PRODUCTS = [
 // anchor higher than what the same page charges is a price rise dressed as a
 // discount. Same reasoning as the `was` note on the single builds below.
 const BUNDLES = [
-  {name:"The Complete Collection", desc:"Every build we make — castle, ships, vehicles, costumes and more.", img:"complete-collection.jpg", slug:"complete-collection", price:"77.92", was:"134.87", builds:13, pages:147, files:78},
-  {name:"Wearable Costume Collection", desc:"Knight armor, robot suit, monster mask, wings & the full beast suit.", img:"wearables-collection.jpg", slug:"wearables-collection", price:"39.96", was:"54.95", builds:5, pages:65, files:30},
-  {name:"Big Weekend Builds", desc:"Four showpiece builds worth clearing a Saturday for.", img:"weekend-builds.jpg", slug:"weekend-builds", price:"37.30", was:"44.96", builds:4, pages:51, files:24},
-  {name:"Things That Go", desc:"Fire truck, race car, rocket ship & the interstellar cockpit.", img:"vehicles-collection.jpg", slug:"vehicles-collection", price:"37.30", was:"39.96", builds:4, pages:44, files:24},
-  {name:"Dens & Hideouts", desc:"Castle, playhouse, dinosaur egg & pirate ship — four builds to climb inside.", img:"dens-collection.jpg", slug:"dens-collection", price:"37.30", was:"39.96", builds:4, pages:38, files:24},
-  {name:"Halloween Costume Bundle", desc:"Monster Mask, Wings & the Beast Suit — the whole costume in one download.", img:"halloween-bundle.jpg", slug:"bundle", price:"24.99", was:"34.97", builds:3, pages:42, files:18},
-  {name:"Birthday Party Pack", desc:"Knight armor, monster mask & wings — the activity and the decor in one.", img:"party-pack.jpg", slug:"party-pack", price:"27.97", was:"29.97", builds:3, pages:33, files:18},
-  {name:"Space Mission Pack", desc:"Rocket ship, interstellar cockpit & a wearable robot suit.", img:"space-pack.jpg", slug:"space-pack", price:"27.97", was:"29.97", builds:3, pages:30, files:18},
-  {name:"Quick Builds Under 90 Minutes", desc:"Fire truck, monster mask & wings — start after lunch, done by dinner.", img:"quick-builds.jpg", slug:"quick-builds", price:"27.97", was:"29.97", builds:3, pages:36, files:18}
+  {name:"The Complete Collection", desc:"Every build we make — castle, ships, vehicles, costumes and more.", img:"complete-collection.jpg", slug:"complete-collection", price:"77.92", was:"175.87", builds:13, pages:147, files:78},
+  {name:"Wearable Costume Collection", desc:"Knight armor, robot suit, monster mask, wings & the full beast suit.", img:"wearables-collection.jpg", slug:"wearables-collection", price:"39.96", was:"71.95", builds:5, pages:65, files:30},
+  {name:"Big Weekend Builds", desc:"Four showpiece builds worth clearing a Saturday for.", img:"weekend-builds.jpg", slug:"weekend-builds", price:"37.30", was:"58.96", builds:4, pages:51, files:24},
+  {name:"Things That Go", desc:"Fire truck, race car, rocket ship & the interstellar cockpit.", img:"vehicles-collection.jpg", slug:"vehicles-collection", price:"37.30", was:"51.96", builds:4, pages:44, files:24},
+  {name:"Dens & Hideouts", desc:"Castle, playhouse, dinosaur egg & pirate ship — four builds to climb inside.", img:"dens-collection.jpg", slug:"dens-collection", price:"37.30", was:"51.96", builds:4, pages:38, files:24},
+  {name:"Halloween Costume Bundle", desc:"Monster Mask, Wings & the Beast Suit — the whole costume in one download.", img:"halloween-bundle.jpg", slug:"bundle", price:"24.99", was:"45.97", builds:3, pages:42, files:18},
+  {name:"Birthday Party Pack", desc:"Knight armor, monster mask & wings — the activity and the decor in one.", img:"party-pack.jpg", slug:"party-pack", price:"27.97", was:"38.97", builds:3, pages:33, files:18},
+  {name:"Space Mission Pack", desc:"Rocket ship, interstellar cockpit & a wearable robot suit.", img:"space-pack.jpg", slug:"space-pack", price:"27.97", was:"38.97", builds:3, pages:30, files:18},
+  {name:"Quick Builds Under 90 Minutes", desc:"Fire truck, monster mask & wings — start after lunch, done by dinner.", img:"quick-builds.jpg", slug:"quick-builds", price:"27.97", was:"38.97", builds:3, pages:36, files:18}
 ];
+
+// A struck-through price only earns its place at a saving worth showing.
+// Declared up here because BOTH grids use it — the singles grid runs first, and
+// a `const` referenced before its declaration is a TDZ crash, not a fallback.
+const SHOW_WAS_AT = 0.15;
 
 const grid = document.getElementById('product-grid');
 grid.innerHTML = PRODUCTS.map(p => {
   const free = p.price === 'free';
-  // The "was" price and the discount pill are per-product. They used to be hardcoded
-  // to $13.32 / 25% OFF for everything, which struck through a price LOWER than the
-  // Beast Suit's own $14.99 — a price rise dressed as a discount. Default stays
-  // $13.32 (the Etsy price of the $9.99 builds), and the pill is computed, so the
-  // badge can never disagree with the two numbers printed next to it.
-  const was = p.was || '13.32';
-  const off = Math.round((1 - parseFloat(p.price) / parseFloat(was)) * 100);
-  const priceHtml = free ? 'FREE' : `<span class="was">$${was}</span>$${p.price}`;
-  const pill = free ? '<div class="pill">FREE START</div>' : `<div class="pill" style="background:var(--gold);color:var(--navy)">${off}% OFF</div>`;
+  // 2026-08-25: singles moved to Etsy parity ($12.99 / $19.99), so there is no
+  // longer an honest higher number to strike through. The anchor USED to default
+  // to $13.32 for every build — inventing a discount that did not exist. It is
+  // now opt-in: a single shows a "was" and a pill ONLY if it carries its own
+  // `was` AND the saving clears the same bar the bundles have to clear.
+  // Savings are the bundles' story now; singles are simply the base price.
+  const save = p.was ? 1 - parseFloat(p.price) / parseFloat(p.was) : 0;
+  const showWas = !free && p.was && save >= SHOW_WAS_AT;
+  const priceHtml = free ? 'FREE'
+    : showWas ? `<span class="was">$${p.was}</span>$${p.price}`
+    : `$${p.price}`;
+  const pill = free ? '<div class="pill">FREE START</div>'
+    : showWas ? `<div class="pill" style="background:var(--gold);color:var(--navy)">${Math.round(save * 100)}% OFF</div>`
+    : '';
   const btn = free ? 'Get It Free →' : 'Buy Now →';
   return `<div class="card${free ? ' free' : ''}">
     <div class="thumb">${pill}<img src="images/${p.img}" alt="${p.name} cardboard blueprint by Tatum & Kash" loading="lazy"></div>
@@ -413,14 +427,13 @@ grid.innerHTML = PRODUCTS.map(p => {
   </div>`;
 }).join('');
 
-// Bundle cards reuse .card, with two deliberate differences.
-// 1. The pill states the BUILD COUNT, not a discount. Five of these bundles save
-//    under 7% against this store's own single prices, and "7% OFF" in a gold pill
-//    both underwhelms and invites the buyer to check the arithmetic. "4 BUILDS" is
-//    the actual reason to buy and is true of every tier.
-// 2. The struck-through price only appears at a saving worth showing (>=15%).
-//    Printing "$39.96  $37.30" is a worse pitch than printing "$37.30".
-const SHOW_WAS_AT = 0.15;
+// Bundle cards reuse .card, with one deliberate difference: the pill states the
+// BUILD COUNT, not a discount. The build count is the actual reason to buy and is
+// true of every tier, whatever the arithmetic does later.
+// Since the 2026-08-25 reprice every anchor is the sum of THIS STORE's own single
+// prices (never Etsy's), and every bundle now clears SHOW_WAS_AT by a wide margin
+// — 28% to 56% — so all nine print a strike-through. That is the point of the
+// reprice: the savings story moved off the singles and onto the bundles.
 document.getElementById('bundle-grid').innerHTML = BUNDLES.map(b => {
   const save = 1 - parseFloat(b.price) / parseFloat(b.was);
   const priceHtml = save >= SHOW_WAS_AT
@@ -463,7 +476,7 @@ document.addEventListener('click', function(e){
   var slug = a.getAttribute('data-slug'),
       name = a.getAttribute('data-name');
   if(a.getAttribute('data-track') === 'buy'){
-    var price = parseFloat(a.getAttribute('data-price')) || 9.99;
+    var price = parseFloat(a.getAttribute('data-price')) || 12.99;
     gtag('event','begin_checkout',{currency:'USD',value:price,items:[{item_id:slug,item_name:name,price:price,quantity:1}]});
   } else {
     gtag('event','select_promotion',{promotion_id:'free-creature-mask',promotion_name:'Free Creature Mask',items:[{item_id:slug||'freemask',item_name:name||'Creature Mask (FREE)'}]});

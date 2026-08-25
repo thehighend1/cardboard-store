@@ -68,5 +68,45 @@
     "product": "prod_V891TRrSbbCna4",
     "price": "price_1U7sj3Dwt14VeVegrdwQ3IRr",
     "url": "https://buy.stripe.com/9B6cN53gZgVJ16h9KfcfK0b"
+  },
+  "complete-collection": {
+    "product": "prod_V8cHEuYjqmWEIf",
+    "price": "price_1U8L32Dwt14VeVegncRqNvK7",
+    "url": "https://buy.stripe.com/14A14n7xfgVJ8yJ5tZcfK0e"
+  },
+  "wearables-collection": {
+    "product": "prod_V8cHzfhtzAiQdv",
+    "price": "price_1U8L33Dwt14VeVegNBmfRO96",
+    "url": "https://buy.stripe.com/bJe28r2cV0WLcOZ09FcfK0f"
+  },
+  "vehicles-collection": {
+    "product": "prod_V8cHOrGhuP5Bzo",
+    "price": "price_1U8L34Dwt14VeVeg9CFUy6dD",
+    "url": "https://buy.stripe.com/4gM7sLeZHfRF2al2hNcfK0g"
+  },
+  "dens-collection": {
+    "product": "prod_V8cHtWqkfPX8NG",
+    "price": "price_1U8L35Dwt14VeVeg3fY4qdxo",
+    "url": "https://buy.stripe.com/14AbJ1cRz5d16qB6y3cfK0h"
+  },
+  "weekend-builds": {
+    "product": "prod_V8cHEMR8YtuAof",
+    "price": "price_1U8L36Dwt14VeVegKikp5Ewy",
+    "url": "https://buy.stripe.com/7sY4gz5p7axl8yJ7C7cfK0i"
+  },
+  "quick-builds": {
+    "product": "prod_V8cHpedXdZYhsl",
+    "price": "price_1U8L36Dwt14VeVegE111XFIl",
+    "url": "https://buy.stripe.com/4gM9ATdVD9theX74pVcfK0j"
+  },
+  "party-pack": {
+    "product": "prod_V8cHYJVwnTx5HC",
+    "price": "price_1U8L37Dwt14VeVeg8DIrAUtX",
+    "url": "https://buy.stripe.com/3cIdR98Bj7l94it9KfcfK0k"
+  },
+  "space-pack": {
+    "product": "prod_V8cHN4ePcZg1E7",
+    "price": "price_1U8L38Dwt14VeVegAuKGwCAc",
+    "url": "https://buy.stripe.com/8x25kD2cV20P7uFe0vcfK0l"
   }
 }

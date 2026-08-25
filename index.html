@@ -262,6 +262,13 @@
       <p>Every blueprint is a printable PDF with cut lines, fold guides &amp; a full parts list — with instructions in 6 languages, split so you download and print only the one you need. Buy once, build again and again.</p>
     </div>
     <div class="grid" id="product-grid"></div>
+
+    <div class="sec-head" id="bundles" style="margin-top:64px">
+      <div class="kicker">BUY THE SET</div>
+      <h2>Bundles — More Builds, One Download</h2>
+      <p>Grouped the way families actually build: everything for a party, everything that goes, everything you climb inside. One checkout, one link, every language included.</p>
+    </div>
+    <div class="grid" id="bundle-grid"></div>
   </div>
 </section>
 
@@ -356,8 +363,28 @@ const PRODUCTS = [
   {name:"Cardboard Monster Mask", desc:"Wearable creature mask with a boxed snout, horns & teeth.", img:"monster-mask.jpg", slug:"mask", price:"9.99"},
   {name:"Cardboard Wings", desc:"Strutted wings you can paint as feathers, leather or scales.", img:"cardboard-wings.jpg", slug:"wings", price:"9.99"},
   {name:"Cardboard Beast Suit", desc:"15-piece creature suit with a faceted skull, spine ridge & tail.", img:"beast-suit.jpg", slug:"beast", price:"14.99", was:"19.99"},
-  {name:"Halloween Bundle — All 3 Costume Builds", desc:"Monster Mask, Wings & Beast Suit together — 120 pages, 6 languages.", img:"halloween-bundle.jpg", slug:"bundle", price:"24.99", was:"34.97"},
   {name:"Creature Mask (FREE)", desc:"Wearable 3-piece horned mask. One box, 20 minutes, no cost.", img:"free-mask.jpg", slug:"freemask", price:"free"}
+];
+
+// ── BUNDLES ────────────────────────────────────────────────────────────────
+// `pages` is the count a buyer actually PRINTS — one language, measured off the
+// shipped PDFs with mdls. It is NOT the page count of the Etsy file: Etsy gets a
+// single merged all-language PDF (castle = 30pp) while the store ships split
+// per-language files (castle = 9pp). Quoting the Etsy number here would promise
+// a document the store does not deliver.
+// `was` is the sum of THIS STORE's own single prices, not the Etsy prices — an
+// anchor higher than what the same page charges is a price rise dressed as a
+// discount. Same reasoning as the `was` note on the single builds below.
+const BUNDLES = [
+  {name:"The Complete Collection", desc:"Every build we make — castle, ships, vehicles, costumes and more.", img:"complete-collection.jpg", slug:"complete-collection", price:"77.92", was:"134.87", builds:13, pages:147, files:78},
+  {name:"Wearable Costume Collection", desc:"Knight armor, robot suit, monster mask, wings & the full beast suit.", img:"wearables-collection.jpg", slug:"wearables-collection", price:"39.96", was:"54.95", builds:5, pages:65, files:30},
+  {name:"Big Weekend Builds", desc:"Four showpiece builds worth clearing a Saturday for.", img:"weekend-builds.jpg", slug:"weekend-builds", price:"37.30", was:"44.96", builds:4, pages:51, files:24},
+  {name:"Things That Go", desc:"Fire truck, race car, rocket ship & the interstellar cockpit.", img:"vehicles-collection.jpg", slug:"vehicles-collection", price:"37.30", was:"39.96", builds:4, pages:44, files:24},
+  {name:"Dens & Hideouts", desc:"Castle, playhouse, dinosaur egg & pirate ship — four builds to climb inside.", img:"dens-collection.jpg", slug:"dens-collection", price:"37.30", was:"39.96", builds:4, pages:38, files:24},
+  {name:"Halloween Costume Bundle", desc:"Monster Mask, Wings & the Beast Suit — the whole costume in one download.", img:"halloween-bundle.jpg", slug:"bundle", price:"24.99", was:"34.97", builds:3, pages:42, files:18},
+  {name:"Birthday Party Pack", desc:"Knight armor, monster mask & wings — the activity and the decor in one.", img:"party-pack.jpg", slug:"party-pack", price:"27.97", was:"29.97", builds:3, pages:33, files:18},
+  {name:"Space Mission Pack", desc:"Rocket ship, interstellar cockpit & a wearable robot suit.", img:"space-pack.jpg", slug:"space-pack", price:"27.97", was:"29.97", builds:3, pages:30, files:18},
+  {name:"Quick Builds Under 90 Minutes", desc:"Fire truck, monster mask & wings — start after lunch, done by dinner.", img:"quick-builds.jpg", slug:"quick-builds", price:"27.97", was:"29.97", builds:3, pages:36, files:18}
 ];
 
 const grid = document.getElementById('product-grid');
@@ -381,6 +408,33 @@ grid.innerHTML = PRODUCTS.map(p => {
       <div class="foot">
         <div class="price">${priceHtml}</div>
         <a class="buy" href="go/${p.slug}/" data-track="${free ? 'free' : 'buy'}" data-slug="${p.slug}" data-name="${p.name.replace(/"/g,'&quot;')}" data-price="${free ? 0 : p.price}">${btn}</a>
+      </div>
+    </div>
+  </div>`;
+}).join('');
+
+// Bundle cards reuse .card, with two deliberate differences.
+// 1. The pill states the BUILD COUNT, not a discount. Five of these bundles save
+//    under 7% against this store's own single prices, and "7% OFF" in a gold pill
+//    both underwhelms and invites the buyer to check the arithmetic. "4 BUILDS" is
+//    the actual reason to buy and is true of every tier.
+// 2. The struck-through price only appears at a saving worth showing (>=15%).
+//    Printing "$39.96  $37.30" is a worse pitch than printing "$37.30".
+const SHOW_WAS_AT = 0.15;
+document.getElementById('bundle-grid').innerHTML = BUNDLES.map(b => {
+  const save = 1 - parseFloat(b.price) / parseFloat(b.was);
+  const priceHtml = save >= SHOW_WAS_AT
+    ? `<span class="was">$${b.was}</span>$${b.price}`
+    : `$${b.price}`;
+  return `<div class="card">
+    <div class="thumb"><div class="pill" style="background:var(--navy);color:#fff">${b.builds} BUILDS</div><img src="images/${b.img}" alt="${b.name} — ${b.builds} Tatum &amp; Kash cardboard blueprints" loading="lazy"></div>
+    <div class="body">
+      <h3>${b.name}</h3>
+      <div class="desc">${b.desc}</div>
+      <div class="desc" style="font-weight:800;color:var(--blue);margin-top:-4px">${b.pages} pages to print · ${b.files} PDFs · 6 languages</div>
+      <div class="foot">
+        <div class="price">${priceHtml}</div>
+        <a class="buy" href="go/${b.slug}/" data-track="buy" data-slug="${b.slug}" data-name="${b.name.replace(/"/g,'&quot;')}" data-price="${b.price}">Buy Now →</a>
       </div>
     </div>
   </div>`;

@@ -224,7 +224,6 @@
       <p class="sub">Tatum &amp; Kash printable blueprints turn ordinary cardboard into castles, rockets, pirate ships, race cars &amp; wearable robot suits. Download instantly — build together today.</p>
       <div class="hero-btns">
         <a class="btn btn-gold" href="#shop">🛒 Shop All Blueprints</a>
-        <a class="btn btn-ghost" href="#freebie">🎁 Get the FREE Starter Kit</a>
       </div>
     </div>
     <div class="hero-art">
@@ -242,17 +241,6 @@
   <div class="item"><div class="ic">♻️</div><b>Just Add Cardboard</b><span>Reuse boxes you already have</span></div>
 </div></div>
 
-<!-- FREEBIE -->
-<section id="freebie"><div class="wrap">
-  <div class="freebie">
-    <img src="images/starter-kit.jpg" alt="Free Tatum &amp; Kash Cardboard Creations starter kit — a first cardboard build">
-    <div>
-      <h3>🎁 Start Free — Cardboard Creations Starter Kit</h3>
-      <p>One box, 45 minutes, your first real build. Measured cut sizes for the door and the window, plus the corner reinforcement trick every later build uses. Free, in 6 languages.</p>
-    </div>
-    <a class="btn btn-gold" href="go/starter/" data-track="free" data-slug="starter" data-name="Starter Kit (FREE)">Get It Free →</a>
-  </div>
-</div></section>
 
 <!-- SHOP -->
 <section id="shop">
@@ -328,7 +316,7 @@
 <section><div class="wrap">
   <div class="cta-banner">
     <h2>Build Something Legendary This Weekend</h2>
-    <p>13 blueprints. One imagination with no limits. Start with the free Starter Kit or dive into a full build.</p>
+    <p>13 blueprints. One imagination with no limits. Pick a build and start today.</p>
     <a class="btn btn-gold" href="#shop">🛒 Browse All Blueprints</a>
   </div>
 </div></section>
@@ -363,8 +351,7 @@ const PRODUCTS = [
   {name:"Cardboard Rocket Ship", desc:"Life-size stand-in rocket with a launch pad — 3… 2… 1… liftoff.", img:"rocket-ship.jpg", slug:"rocket", price:"12.99"},
   {name:"Cardboard Monster Mask", desc:"Wearable creature mask with a boxed snout, horns & teeth.", img:"monster-mask.jpg", slug:"mask", price:"12.99"},
   {name:"Cardboard Wings", desc:"Strutted wings you can paint as feathers, leather or scales.", img:"cardboard-wings.jpg", slug:"wings", price:"12.99"},
-  {name:"Cardboard Beast Suit", desc:"15-piece creature suit with a faceted skull, spine ridge & tail.", img:"beast-suit.jpg", slug:"beast", price:"19.99"},
-  {name:"Starter Kit (FREE)", desc:"Your first build: one box, a door, a window, reinforced corners.", img:"starter-kit.jpg", slug:"starter", price:"free"}
+  {name:"Cardboard Beast Suit", desc:"15-piece creature suit with a faceted skull, spine ridge & tail.", img:"beast-suit.jpg", slug:"beast", price:"19.99"}
 ];
 
 // ── BUNDLES ────────────────────────────────────────────────────────────────
@@ -475,8 +462,6 @@ document.addEventListener('click', function(e){
   if(a.getAttribute('data-track') === 'buy'){
     var price = parseFloat(a.getAttribute('data-price')) || 12.99;
     gtag('event','begin_checkout',{currency:'USD',value:price,items:[{item_id:slug,item_name:name,price:price,quantity:1}]});
-  } else {
-    gtag('event','select_promotion',{promotion_id:'free-starter-kit',promotion_name:'Free Starter Kit',items:[{item_id:slug||'starter',item_name:name||'Starter Kit (FREE)'}]});
   }
 });
 </script>

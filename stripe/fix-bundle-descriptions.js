@@ -9,15 +9,15 @@ let KEY=process.env.STRIPE_SECRET_KEY;
 if(!KEY){ try{ KEY=fs.readFileSync(path.join(os.homedir(),'.stripe-key'),'utf8').trim().split('\n')[0].trim(); }catch{} }
 const links=JSON.parse(fs.readFileSync(path.join(__dirname,'links.json'),'utf8'));
 const D={
- 'complete-collection':'Every Cardboard Creations build in one download: 13 life-size builds, 147 printable pages in your language, 78 PDFs covering English, Spanish, French, German, Dutch and Portuguese.',
- 'wearables-collection':'Knight armour, robot suit, monster mask, wings and a full creature suit — 5 wearable builds, 65 printable pages in your language, 30 PDFs across six languages.',
- 'vehicles-collection':'Fire truck, race car cockpit, rocket ship and interstellar cockpit — 4 builds, 44 printable pages in your language, 24 PDFs across six languages.',
- 'dens-collection':'Castle, playhouse, dinosaur egg and pirate ship — 4 builds a child climbs inside, 38 printable pages in your language, 24 PDFs across six languages.',
- 'weekend-builds':'Four showpiece builds — pirate ship, playhouse, castle and creature suit. 51 printable pages in your language, 24 PDFs across six languages.',
- 'quick-builds':'Three builds you can finish in an afternoon: fire truck, monster mask and wings. 36 printable pages in your language, 18 PDFs across six languages.',
- 'party-pack':'Knight armour, monster mask and wings — the party activity and the decor in one. 33 printable pages in your language, 18 PDFs across six languages.',
- 'space-pack':'Rocket ship, interstellar cockpit and a wearable robot suit. 30 printable pages in your language, 18 PDFs across six languages.',
- 'bundle':'Monster Mask, Wings and the full Beast Suit together — 3 costume builds, 42 printable pages in your language, 18 PDFs across six languages.',
+ 'complete-collection':'Every Cardboard Creations build in one download: 13 life-size builds, 184 printable pages in your language, 78 PDFs covering English, Spanish, French, German, Dutch and Portuguese.',
+ 'wearables-collection':'Knight armour, robot suit, monster mask, wings and a full creature suit — 5 wearable builds, 82 printable pages in your language, 30 PDFs across six languages.',
+ 'vehicles-collection':'Fire truck, race car cockpit, rocket ship and interstellar cockpit — 4 builds, 55 printable pages in your language, 24 PDFs across six languages.',
+ 'dens-collection':'Castle, playhouse, dinosaur egg and pirate ship — 4 builds a child climbs inside, 47 printable pages in your language, 24 PDFs across six languages.',
+ 'weekend-builds':'Four showpiece builds — pirate ship, playhouse, castle and creature suit. 60 printable pages in your language, 24 PDFs across six languages.',
+ 'quick-builds':'Three builds you can finish in an afternoon: fire truck, monster mask and wings. 42 printable pages in your language, 18 PDFs across six languages.',
+ 'party-pack':'Knight armour, monster mask and wings — the party activity and the decor in one. 39 printable pages in your language, 18 PDFs across six languages.',
+ 'space-pack':'Rocket ship, interstellar cockpit and a wearable robot suit. 43 printable pages in your language, 18 PDFs across six languages.',
+ 'bundle':'Monster Mask, Wings and the full Beast Suit together — 3 costume builds, 48 printable pages in your language, 18 PDFs across six languages.',
 };
 function post(ep,form){return new Promise((res,rej)=>{
   const body=new URLSearchParams(form).toString();

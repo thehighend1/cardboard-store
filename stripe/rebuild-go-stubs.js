@@ -16,7 +16,7 @@ const DIR = __dirname, ROOT = path.join(DIR, '..');
 const links = JSON.parse(fs.readFileSync(path.join(DIR, 'links.json'), 'utf8'));
 
 // Non-Stripe destinations that live in go/ but are not purchases.
-const STATIC = { starter: '/free-kit/', freemask: '/free-mask/' };
+const STATIC = { starter: '/free-kit/' };
 
 const stub = url => `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>Taking you to secure checkout…</title><meta http-equiv="refresh" content="0;url=${url}"><link rel="canonical" href="${url}"><script>location.replace("${url}")</script><style>body{font-family:system-ui,sans-serif;text-align:center;padding:60px;color:#1A237E}</style></head><body>Taking you to secure checkout… <a href="${url}">Click here</a> if it doesn't load.</body></html>`;
 
@@ -28,6 +28,18 @@ for (const [slug, rec] of Object.entries(links)) {
   const next = stub(rec.url);
   const prev = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : '';
   if (prev !== next) { fs.writeFileSync(file, next); console.log(`✏️  go/${slug}/`); written++; }
+}
+
+// The STATIC (non-purchase) slugs need a real stub too. They were only ever
+// written into _redirects, which GitHub Pages IGNORES — so when the free build
+// changed, go/starter/ kept redirecting to a page that no longer exists.
+for (const [slug, dest] of Object.entries(STATIC)) {
+  const dir = path.join(ROOT, 'go', slug);
+  fs.mkdirSync(dir, { recursive: true });
+  const file = path.join(dir, 'index.html');
+  const next = stub(dest);
+  const prev = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : '';
+  if (prev !== next) { fs.writeFileSync(file, next); console.log(`✏️  go/${slug}/ (static → ${dest})`); written++; }
 }
 
 // Keep the (inert) _redirects honest rather than stale.

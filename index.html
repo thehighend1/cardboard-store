@@ -114,6 +114,15 @@
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
   .card{background:var(--card);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .18s,box-shadow .18s}
   .card:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(26,35,126,.22)}
+  /* A visitor arriving from a pin lands on the build they clicked, not the grid.
+     The ring says "this one" without shouting, and clears itself after 6s. */
+  .card.spotlight{box-shadow:0 0 0 4px var(--gold),0 22px 44px rgba(26,35,126,.28);transform:translateY(-6px)}
+  .card.spotlight .thumb::after{content:'';position:absolute;inset:0;box-shadow:inset 0 0 0 3px var(--gold)}
+  @media (prefers-reduced-motion:no-preference){
+    .card.spotlight{animation:landed 1.1s ease-out 2}
+  }
+  @keyframes landed{0%,100%{box-shadow:0 0 0 4px var(--gold),0 22px 44px rgba(26,35,126,.28)}
+                    50%{box-shadow:0 0 0 9px rgba(255,215,0,.42),0 22px 44px rgba(26,35,126,.28)}}
   .card .thumb{position:relative;aspect-ratio:1/1;background:#eef1fb;overflow:hidden}
   .card .thumb img{width:100%;height:100%;object-fit:cover}
   .card .pill{position:absolute;top:12px;left:12px;background:var(--green);color:#fff;font-family:'Fredoka';font-size:12px;padding:6px 13px;border-radius:30px;letter-spacing:1px;box-shadow:0 4px 10px rgba(0,0,0,.2)}
@@ -398,7 +407,7 @@ grid.innerHTML = PRODUCTS.map(p => {
     : showWas ? `<div class="pill" style="background:var(--gold);color:var(--navy)">${Math.round(save * 100)}% OFF</div>`
     : '';
   const btn = free ? 'Get It Free →' : 'Buy Now →';
-  return `<div class="card${free ? ' free' : ''}">
+  return `<div class="card${free ? ' free' : ''}" id="p-${p.slug}">
     <div class="thumb">${pill}<img src="images/${p.img}" alt="${p.name} cardboard blueprint by Tatum & Kash" loading="lazy"></div>
     <div class="body">
       <h3>${p.name}</h3>
@@ -423,7 +432,7 @@ document.getElementById('bundle-grid').innerHTML = BUNDLES.map(b => {
   const priceHtml = save >= SHOW_WAS_AT
     ? `<span class="was">$${b.was}</span>$${b.price}`
     : `$${b.price}`;
-  return `<div class="card">
+  return `<div class="card" id="b-${b.slug}">
     <div class="thumb"><div class="pill" style="background:var(--navy);color:#fff">${b.builds} BUILDS</div><img src="images/${b.img}" alt="${b.name} — ${b.builds} Tatum &amp; Kash cardboard blueprints" loading="lazy"></div>
     <div class="body">
       <h3>${b.name}</h3>
@@ -436,6 +445,35 @@ document.getElementById('bundle-grid').innerHTML = BUNDLES.map(b => {
     </div>
   </div>`;
 }).join('');
+
+/* ── PIN LANDING ROUTER (2026-09-18) ────────────────────────────────────────
+   Measured: 8,921 Pinterest impressions in 30 days produced 9 outbound clicks,
+   and every one of them landed on this page's 13-build grid no matter which
+   build the pin showed. The pin already says which one it was — its link
+   carries utm_content="racecar__blueprint" — so route on what is ALREADY in the
+   URL. That points all 158 pins already live at their own build with no pin
+   edited, and #p-<slug> works for anything written from here on.
+   The pin pool and this store named their products separately, hence ALIAS. */
+const SLUG_ALIAS = { racecar:'race-car', firetruck:'fire-truck', heebot:'robot' };
+function landingTarget(){
+  var h = (location.hash || '').replace(/^#/, '');
+  // An explicit hash always wins, and a non-product hash (#bundles, #shop) is
+  // left to the browser rather than overridden by a stale utm tag.
+  if (h) return /^[pb]-/.test(h) ? document.getElementById(h) : null;
+  var uc = new URLSearchParams(location.search).get('utm_content') || '';
+  if (!uc) return null;
+  var id = uc.split('__')[0];                       // racecar__blueprint -> racecar
+  if (id.indexOf('bundle-') === 0) return document.getElementById('b-' + id.slice(7));
+  return document.getElementById('p-' + (SLUG_ALIAS[id] || id))
+      || document.getElementById('b-' + id);
+}
+(function routeToPin(){
+  var el = landingTarget();
+  if (!el) return;
+  el.scrollIntoView({ behavior:'smooth', block:'center' });
+  el.classList.add('spotlight');
+  setTimeout(function(){ el.classList.remove('spotlight'); }, 6000);
+})();
 </script>
 
 <!-- Read-in-any-language (Google Translate) -->

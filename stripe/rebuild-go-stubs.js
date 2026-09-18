@@ -16,7 +16,7 @@ const DIR = __dirname, ROOT = path.join(DIR, '..');
 const links = JSON.parse(fs.readFileSync(path.join(DIR, 'links.json'), 'utf8'));
 
 // Non-Stripe destinations that live in go/ but are not purchases.
-const STATIC = {};   // no free build on the shop — the Starter Kit and the Creature Mask were both retired 2026-09-17
+const STATIC = { freemask: '/free-mask/' };   // the Monster Mask is the free gift as of 2026-09-17
 
 const stub = url => `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>Taking you to secure checkout…</title><meta http-equiv="refresh" content="0;url=${url}"><link rel="canonical" href="${url}"><script>location.replace("${url}")</script><style>body{font-family:system-ui,sans-serif;text-align:center;padding:60px;color:#1A237E}</style></head><body>Taking you to secure checkout… <a href="${url}">Click here</a> if it doesn't load.</body></html>`;
 

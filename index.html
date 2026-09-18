@@ -224,6 +224,7 @@
       <p class="sub">Tatum &amp; Kash printable blueprints turn ordinary cardboard into castles, rockets, pirate ships, race cars &amp; wearable robot suits. Download instantly — build together today.</p>
       <div class="hero-btns">
         <a class="btn btn-gold" href="#shop">🛒 Shop All Blueprints</a>
+        <a class="btn btn-ghost" href="#freebie">🎁 Get the FREE Monster Mask</a>
       </div>
     </div>
     <div class="hero-art">
@@ -241,6 +242,18 @@
   <div class="item"><div class="ic">♻️</div><b>Just Add Cardboard</b><span>Reuse boxes you already have</span></div>
 </div></div>
 
+
+<!-- FREEBIE -->
+<section id="freebie"><div class="wrap">
+  <div class="freebie">
+    <img src="images/monster-mask.jpg" alt="Free Tatum &amp; Kash wearable cardboard monster mask blueprint">
+    <div>
+      <h3>🎁 Start Free — Wearable Cardboard Monster Mask</h3>
+      <p>One box, one hour, a horned creature mask with a boxed jaw and teeth your kid can actually wear out. Full-size cut templates and illustrated steps — the same format as our paid builds. Free, in 6 languages.</p>
+    </div>
+    <a class="btn btn-gold" href="free-mask/" data-track="free" data-slug="freemask" data-name="Monster Mask (FREE)">Get It Free →</a>
+  </div>
+</div></section>
 
 <!-- SHOP -->
 <section id="shop">
@@ -349,7 +362,6 @@ const PRODUCTS = [
   {name:"Giant Dinosaur Egg", desc:"A 4-foot life-size egg kids can hatch right out of.", img:"dino-egg.jpg", slug:"dino", price:"12.99"},
   {name:"Knight Armor Set", desc:"8-piece life-size wearable armor with a kite shield.", img:"knight-armor.jpg", slug:"knight", price:"12.99"},
   {name:"Cardboard Rocket Ship", desc:"Life-size stand-in rocket with a launch pad — 3… 2… 1… liftoff.", img:"rocket-ship.jpg", slug:"rocket", price:"12.99"},
-  {name:"Cardboard Monster Mask", desc:"Wearable creature mask with a boxed snout, horns & teeth.", img:"monster-mask.jpg", slug:"mask", price:"12.99"},
   {name:"Cardboard Wings", desc:"Strutted wings you can paint as feathers, leather or scales.", img:"cardboard-wings.jpg", slug:"wings", price:"12.99"},
   {name:"Cardboard Beast Suit", desc:"15-piece creature suit with a faceted skull, spine ridge & tail.", img:"beast-suit.jpg", slug:"beast", price:"19.99"}
 ];
@@ -462,6 +474,8 @@ document.addEventListener('click', function(e){
   if(a.getAttribute('data-track') === 'buy'){
     var price = parseFloat(a.getAttribute('data-price')) || 12.99;
     gtag('event','begin_checkout',{currency:'USD',value:price,items:[{item_id:slug,item_name:name,price:price,quantity:1}]});
+  } else {
+    gtag('event','select_promotion',{promotion_id:'free-monster-mask',promotion_name:'Free Monster Mask',items:[{item_id:slug||'freemask',item_name:name||'Monster Mask (FREE)'}]});
   }
 });
 </script>
